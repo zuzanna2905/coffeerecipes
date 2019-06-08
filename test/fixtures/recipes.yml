@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  roaster: MyString
+  name: MyString
+  temperature: 1
+  water: 1
+  dose: 1
+  time: 2019-06-08 22:57:21
+  method: MyString
+  description: MyString
+
+two:
+  roaster: MyString
+  name: MyString
+  temperature: 1
+  water: 1
+  dose: 1
+  time: 2019-06-08 22:57:21
+  method: MyString
+  description: MyString
