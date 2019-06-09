@@ -1,0 +1,10 @@
+<div class='container'>
+    <h3 id='title' class='well col-xs-10 col-xs-offset-1'><%= @recipe.name %></h3>
+    <div class='well col-xs-10 col-xs-offset-1 center'>
+        <div>
+            <p><%= simple_format(@recipe.description)%></p>
+            <hr>
+            <%= link_to "View all recipes", recipes_path, class: 'btn btn-info btn-sm' %>
+        </div>
+    </div>
+</div>
