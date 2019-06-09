@@ -5,18 +5,18 @@
         <%= form_for(@recipe, :html => {class: 'form-horizontal', role: 'form'}) do |f| %>
         <div class='form-group'> 
             <div class='control-label col-sm-2'>
-                <%= f.label :name %>
+                <%= f.label :roaster %>
             </div>
             <div class='col-sm-8'>
-                <%= f.text_field :name, class: 'form-control', placeholder: 'Name of coffee', autofocus: true %>
+                <%= f.text_field :roaster, class: 'form-control', placeholder: 'Coffee roaster', autofocus: true, required: true%>
             </div>
         </div>
         <div class='form-group'> 
             <div class='control-label col-sm-2'>
-                <%= f.label :roaster %>
+                <%= f.label :name %>
             </div>
             <div class='col-sm-8'>
-                <%= f.text_field :roaster, class: 'form-control', placeholder: 'Coffee roaster', autofocus: true %>
+                <%= f.text_field :name, class: 'form-control', placeholder: 'Name of coffee', autofocus: true, required: true %>
             </div>
         </div>
         <div class='form-group'> 

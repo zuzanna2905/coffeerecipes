@@ -1,0 +1,17 @@
+<% obj.each { |recipe| %>
+  <div class='row'>
+    <div class='col-xs-8 col-xs-offset-2'>
+      <div class='well well-lg'>
+        <h4><%= link_to recipe.name, recipe_path(recipe)%></h4>
+        <div class='article-body'>
+          <%= truncate(recipe.description, length: 50) %>
+          <div class='article-details'>
+          <small>Created
+                <%= time_ago_in_words(recipe.created_at) %> age,
+                last updated: <%= time_ago_in_words(recipe.updated_at) %> ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% } %>

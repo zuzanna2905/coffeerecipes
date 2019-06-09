@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only:  [:show]
+  before_action :set_recipe, only:  [:show, :edit, :update]
   def index
     @recipes = Recipe.all
   end
@@ -11,6 +11,15 @@ class RecipesController < ApplicationController
   def edit
   end
   
+  def update
+    if @recipe.update(recipe_params)
+      flash[:success] = 'Article was successfully updated!'
+      redirect_to recipe_path(@recipe)
+    else
+      render 'edit'
+    end
+  end
+
   def create
     @recipe = Recipe.new(recipe_params)
     if @recipe.save
