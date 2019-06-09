@@ -24,7 +24,7 @@
                 <%= f.label :temperature %>
             </div>
             <div class='col-sm-8'>
-                <%= f.number_field :temperature, in: 60.0..90.0, step: 1.0, class: 'form-control', placeholder: 'Water temperature', autofocus: true %>
+                <%= f.number_field :temperature, in: 60.0..100.0, step: 1.0, class: 'form-control', placeholder: 'Water temperature', autofocus: true %>
             </div>
         </div>
         <div class='form-group'> 
@@ -57,6 +57,22 @@
             </div>
             <div class='col-sm-8'>
                 <%= f.text_field :method, class: 'form-control', placeholder: 'Making method', autofocus: true %>
+            </div>
+        </div>
+        <div class='form-group'> 
+            <div class='control-label col-sm-2'>
+                <%= f.label :grinder %>
+            </div>
+            <div class='col-sm-8'>
+                <%= f.text_field :grinder, class: 'form-control', placeholder: 'Grinder name', autofocus: true %>
+            </div>
+        </div>
+        <div class='form-group'> 
+            <div class='control-label col-sm-2'>
+                <%= f.label :clicks %>
+            </div>
+            <div class='col-sm-8'>
+                <%= f.number_field :clicks, step: 1, class: 'form-control', placeholder: 'Numer of clicks', autofocus: true %>
             </div>
         </div>
         <div class='form-group'> 
