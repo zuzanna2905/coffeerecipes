@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_09_123556) do
+ActiveRecord::Schema.define(version: 2019_06_09_152447) do
 
   create_table "beans", force: :cascade do |t|
     t.string "name"
-    t.string "roaster"
+    t.integer "roaster_id"
     t.string "method"
     t.string "country"
     t.string "roast"

@@ -1,0 +1,64 @@
+<%= render 'shared/errors', obj: @bean%>
+
+<div class='row'>
+    <div class='col-xs-12'>
+        <%= form_for(@bean, :html => {class: 'form-horizontal', role: 'form'}) do |f| %>
+        <div class='form-group'>
+            <div class='control-label col-sm-2'>
+                <%= f.label :roaster %>
+            </div>
+            <div class='col-sm-8'>
+                <%= f.select :roaster, options_for_select(Roaster.all.collect{ |u| [u.name, u.id] }, Roaster.first.id) %>
+            </div>
+        </div>
+        <div class='form-group'> 
+            <div class='control-label col-sm-2'>
+                <%= f.label :name %>
+            </div>
+            <div class='col-sm-8'>
+                <%= f.text_field :name, class: 'form-control', placeholder: 'Name of coffee', autofocus: true, required: true %>
+            </div>
+        </div>
+        <div class='form-group'> 
+            <div class='control-label col-sm-2'>
+                <%= f.label :method %>
+            </div>
+            <div class='col-sm-8'>
+                <%= f.text_field :method, class: 'form-control', placeholder: 'Roasting method', autofocus: true, required: true %>
+            </div>
+        </div>
+        <div class='form-group'> 
+            <div class='control-label col-sm-2'>
+                <%= f.label :country %>
+            </div>
+            <div class='col-sm-8'>
+                <%= f.text_field :country, class: 'form-control', placeholder: 'Country name of coffee', autofocus: true %>
+            </div>
+        </div>
+        <div class='form-group'> 
+            <div class='control-label col-sm-2'>
+                <%= f.label :roast %>
+            </div>
+            <div class='col-sm-8'>
+                <%= f.text_field :roast, class: 'form-control', rows: 10, placeholder: 'Roasting' %>
+            </div>
+        </div>
+        <div class='form-group'> 
+            <div class='control-label col-sm-2'>
+                <%= f.label :description %>
+            </div>
+            <div class='col-sm-8'>
+                <%= f.text_area :description, class: 'form-control', rows: 10, placeholder: 'Description of beans' %>
+            </div>
+        </div>
+        <div class='form-group'> 
+            <div class='col-sm-offset-2 col-sm-10'>
+                <%= f.submit class: 'btn btn-success btn-lg'%>
+            </div>
+        </div>
+        <% end %>
+        <div class='col-sm-offset-2'>
+            [ <%= link_to "Cancle request and return to beans listing", beans_path%> ]
+        </div>
+    </div>
+</div>

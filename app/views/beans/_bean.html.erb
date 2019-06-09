@@ -1,0 +1,18 @@
+<% obj.each { |bean| %>
+  <div class='row'>
+    <div class='col-xs-8 col-xs-offset-2'>
+      <div class='well well-lg'>
+        <h4><%= link_to bean.name, bean_path(bean)%></h4>
+        <div class='article-body'>
+          <%= truncate(bean.description, length: 50) %>
+          <div class='article-details'>
+          <hr>
+          <small>Created 
+                <%= time_ago_in_words(bean.created_at) %> age,
+                last updated: <%= time_ago_in_words(bean.updated_at) %> ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% } %>
