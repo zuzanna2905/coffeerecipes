@@ -24,7 +24,7 @@
                 <%= f.label :temperature %>
             </div>
             <div class='col-sm-8'>
-                <%= f.number_field :temperature, in: 60.0..100.0, step: 1.0, class: 'form-control', placeholder: 'Water temperature', autofocus: true %>
+                <%= f.number_field :temperature, in: 60.0..100.0, step: 1.0, class: 'form-control', placeholder: 'Water temperature', required: true, autofocus: true %>
             </div>
         </div>
         <div class='form-group'> 
@@ -32,7 +32,7 @@
                 <%= f.label :water %>
             </div>
             <div class='col-sm-8'>
-                <%= f.number_field :water, step: 10.0, class: 'form-control', placeholder: 'Water mililiters', autofocus: true %>
+                <%= f.number_field :water, step: 10.0, class: 'form-control', placeholder: 'Water mililiters', autofocus: true, required: true %>
             </div>
         </div>
         <div class='form-group'> 
@@ -40,7 +40,7 @@
                 <%= f.label :dose %>
             </div>
             <div class='col-sm-8'>
-                <%= f.number_field :dose, step: 0.1, class: 'form-control', placeholder: 'Coffee gramature', autofocus: true %>
+                <%= f.number_field :dose, step: 0.1, class: 'form-control', placeholder: 'Coffee gramature', autofocus: true, required: true %>
             </div>
         </div>
         <div class='form-group'> 
@@ -48,7 +48,7 @@
                 <%= f.label :time %>
             </div>
             <div class='col-sm-8'>
-                <%= f.time_field :time, class: 'form-control', placeholder: 'Pouring time', autofocus: true %>
+                <%= f.time_field :time, class: 'form-control', placeholder: 'Pouring time', autofocus: true, required: true %>
             </div>
         </div>
         <div class='form-group'> 
@@ -56,7 +56,7 @@
                 <%= f.label :method %>
             </div>
             <div class='col-sm-8'>
-                <%= f.text_field :method, class: 'form-control', placeholder: 'Making method', autofocus: true %>
+                <%= f.text_field :method, class: 'form-control', placeholder: 'Making method', autofocus: true, required: true %>
             </div>
         </div>
         <div class='form-group'> 

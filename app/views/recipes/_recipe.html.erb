@@ -6,7 +6,8 @@
         <div class='article-body'>
           <%= truncate(recipe.description, length: 50) %>
           <div class='article-details'>
-          <small>Created
+          <hr>
+          <small>Created 
                 <%= time_ago_in_words(recipe.created_at) %> age,
                 last updated: <%= time_ago_in_words(recipe.updated_at) %> ago</small>
           </div>

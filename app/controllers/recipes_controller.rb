@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
   
   def update
     if @recipe.update(recipe_params)
-      flash[:success] = 'Article was successfully updated!'
+      flash[:success] = 'Recipe was successfully updated!'
       redirect_to recipe_path(@recipe)
     else
       render 'edit'
@@ -26,7 +26,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
     if @recipe.save
-      flash[:success] = 'Article was successfully created!'
+      flash[:success] = 'Recipe was successfully created!'
       redirect_to recipe_path(@recipe)
     else
       render 'new'
@@ -34,6 +34,12 @@ class RecipesController < ApplicationController
   end
 
   def show
+  end
+
+  def destroy
+    @recipe.destroy
+    flash[:danger] = 'Recipe was successfully destroyed!'
+    redirect_to recipes_path
   end
 
   private
@@ -47,7 +53,7 @@ class RecipesController < ApplicationController
 
   def require_same_user
     if current_user != @recipe.user
-      flash[:danger] = 'You can only edit or delete your own articles'
+      flash[:danger] = 'You can only edit or delete your own recipes'
       redirect_to root_path
     end
   end
