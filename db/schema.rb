@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_09_152447) do
+ActiveRecord::Schema.define(version: 2019_06_09_191228) do
 
   create_table "beans", force: :cascade do |t|
     t.string "name"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2019_06_09_152447) do
     t.string "grinder"
     t.integer "clicks"
     t.integer "user_id"
+    t.integer "rate"
   end
 
   create_table "roasters", force: :cascade do |t|

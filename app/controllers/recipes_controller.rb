@@ -22,6 +22,10 @@ class RecipesController < ApplicationController
     end
   end
 
+  def table
+    @recipes = Recipe.paginate(page: params[:page], per_page: 10)
+  end
+
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
@@ -44,7 +48,7 @@ class RecipesController < ApplicationController
 
   private
   def recipe_params
-    params.require(:recipe).permit(:name, :roaster, :temperature, :water, :dose, :method, :grinder, :clicks, :time, :description)
+    params.require(:recipe).permit(:name, :roaster, :temperature, :water, :dose, :method, :grinder, :clicks, :time, :description, :rate)
   end
 
   def set_recipe

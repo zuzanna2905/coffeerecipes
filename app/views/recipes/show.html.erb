@@ -12,6 +12,7 @@
             <% if @recipe.method %> <p>Method: <%= @recipe.method%> </p><%else%><%end%>
             <% if @recipe.grinder %> <p>Grinder: <%= @recipe.grinder%></p><%else%><%end%>
             <% if @recipe.clicks %> <p>Clicks: <%= @recipe.clicks%></p><%else%><%end%>
+            <% if @recipe.rate %> <p>Rate: <%= @recipe.rate%></p><%else%><%end%>
             </div>
             <div class='col-lg-12'>
             <% if @recipe.description.length > 0 %> <p>Description: <%= simple_format(@recipe.description)%></p><%else%><%end%>

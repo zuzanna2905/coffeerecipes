@@ -1,0 +1,34 @@
+<div class='text-center'>
+    <%= will_paginate %>
+</div>
+<h2 class='text-center'>List of all recipes</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Temperature</th>
+      <th>Water</th>
+      <th>Dose</th>
+      <th>Time</th>
+      <th>Method</th>
+      <th>Grinder</th>
+      <th>Clicks</th>
+      <th>Rate [1-5]</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <tr>
+        <td><%= link_to recipe.name, recipe_path(recipe) %></td>
+        <td><% if recipe.temperature %> <p><%= recipe.temperature%>C</p> <%else%> na <%end%></td>
+        <td><% if recipe.water %> <p> <%= recipe.water%>ml </p> <%else%><%end%></td>
+        <td><% if recipe.dose %> <p> <%= recipe.dose%>g </p><%else%><%end%></td>
+        <td><% if recipe.time %> <p> <%= recipe.time.strftime('%H:%M')%> </p><%else%><%end%></td>
+        <td><% if recipe.method %> <p> <%= recipe.method%> </p><%else%><%end%></td>
+        <td><% if recipe.grinder %> <p> <%= recipe.grinder%></p><%else%><%end%></td>
+        <td><% if recipe.clicks %> <p> <%= recipe.clicks%></p><%else%><%end%></td>
+        <td><% if recipe.rate %> <p> <%= recipe.rate%></p><%else%><%end%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
