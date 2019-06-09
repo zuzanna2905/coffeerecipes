@@ -8,7 +8,7 @@
                 <%= f.label :roaster %>
             </div>
             <div class='col-sm-8'>
-                <%= f.select :roaster, options_for_select(Roaster.all.collect{ |u| [u.name, u.id] }, Roaster.first.id) %>
+                <%= f.select_tag :roaster, options_for_select(Roaster.all.collect{ |u| [u.name, u.id] }, Roaster.first.id), class: 'form-control' %>
             </div>
         </div>
         <div class='form-group'> 
