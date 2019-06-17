@@ -17,3 +17,73 @@ footer {
     font-size: 15px;
     text-align: left;
 }
+
+.user-name {
+    text-align: center;
+    a {
+        color: white;
+    }
+    a:hover, a:focus {
+        color: darkblue;
+        background-color: transparent !important;
+    }
+}
+
+.nav.navbar-right {     
+    padding: 5px;
+}
+
+.nav.navbar-nav {
+    line-height: 10px;
+    .navbar-link {
+        border-radius: 5px;
+        color: #fff;
+        margin-top: 15px;
+        padding: 5px;
+    }
+    .navbar-link:focus, .navbar-link:hover {
+        background: transparent;
+        color: #fff;
+    }
+    li a{
+        margin-right: 5px;
+    }    
+    a {
+        color: white;
+    }
+    a:hover, a:focus {
+        color: darkblue;
+        background-color: transparent !important;
+    }
+    .dropdown-menu {
+        li a{
+            color: black;
+        }
+        a:hover, a:focus {
+            color: green;
+            background-color: transparent !important;
+        }
+    }
+}
+
+.nav.navbar-right li {
+    .btn {
+        color: #fff !important;
+    }
+    .btn-danger:hover, .btn-danger:focus {
+        background-color: darken(#d9534f,20%) !important;
+    }
+    .btn-primary:hover, .btn-primary:focus {
+        background-color: darken(#428bca,20%) !important;
+    }    
+}
+
+.navbar.navbar-static-top {
+    background:#55AA55;
+    color: #fff !important;
+    padding-bottom: 5px;
+}
+
+.navbar-brand {
+    color: white;
+}

@@ -26,6 +26,9 @@ class RecipesController < ApplicationController
     @recipes = Recipe.paginate(page: params[:page], per_page: 10)
   end
 
+  def favorites 
+  end
+
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user

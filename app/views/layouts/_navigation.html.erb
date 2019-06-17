@@ -1,0 +1,45 @@
+<div class="navbar navbar-static-top">
+    <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">CoffeeReceipts</a>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav mr-auto">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" 
+                    aria-expanded="false">Recipes <span class="caret"></span></a>
+                    <ul class="dropdown-menu">   
+                        <li><%= link_to "Show All", root_path%></li>
+                        <li><%= link_to "Recipes Table", table_path%></li>
+                        <li><%= link_to "New Recipe", new_recipe_path%></li>
+                        <li><%= link_to 'Favorites', favorites_path%></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" 
+                    aria-expanded="false">Coffees <span class="caret"></span></a>
+                    <ul class="dropdown-menu">   
+                        <li><%= link_to "Show All", beans_path%></li>
+                        <li><%= link_to "New Coffee", new_bean_path%></li>
+                    </ul>
+                </li>
+                <li><%= link_to "Roasters", roasters_path %></li>
+            </ul>
+            <ul class='nav navbar-right col-md-4'>
+                <% if current_user %>
+                    <li class="col-md-8 user-name"><%= link_to current_user.email, edit_registration_path(current_user)%></li>
+                    <li class="col-md-4 logout">
+                        <%= link_to('Logout', destroy_user_session_path, class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %>
+                    </li>
+                <% else %>
+                    <li class="col-md-4 pull-right">
+                        <%= link_to('Sign In', new_user_session_path, class: 'btn btn-primary', title: 'Sign In') %>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+</div>
