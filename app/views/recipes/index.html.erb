@@ -1,4 +1,10 @@
-<div>
-    <h4 class='title'>Listing all recipes</h4>
+<div class='center-align'>
+    <h4>Listing all recipes</h4>
+    <div>
+        <%= will_paginate %>
+    </div>
     <%= render 'recipe', obj: @recipes %>
+    <div>
+        <%= will_paginate %>
+    </div>
 </div>
