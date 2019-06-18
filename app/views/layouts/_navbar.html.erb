@@ -3,7 +3,7 @@
         <a href="#!" class="brand-logo">Coffee Receips</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-            <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Receips
+            <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Recipes
                 <i class="material-icons right">arrow_drop_down</i>
             </a></li>
             <li><a href="badges.html">Coffee</a></li>
@@ -15,16 +15,25 @@
 </nav>
 
 <ul id="dropdown1" class="dropdown-content">
-    <li><%= link_to 'Receips', recipes_path%></li>
+    <li><%= link_to 'Recipes', recipes_path%></li>
+    <li><%= link_to 'Table', table_path%></li>
+    <li><%= link_to 'Add', new_recipe_path%></li>
+    <li><%= link_to 'Favorites', favorites_path%></li>
+</ul>
+
+<ul id="dropdown2" class="dropdown-content">
+    <li><%= link_to 'Recipes', recipes_path%></li>
     <li><%= link_to 'Table', table_path%></li>
     <li><%= link_to 'Add', new_recipe_path%></li>
     <li><%= link_to 'Favorites', favorites_path%></li>
 </ul>
 
 <ul class="sidenav" id="mobile-demo">
-    <li><a href="sass.html">Receips</a></li>
+    <li><a class="dropdown-trigger" href="#" data-target="dropdown2">Recipes
+        <i class="material-icons right">arrow_drop_down</i>
+    </a></li>
     <li><a href="badges.html">Coffee</a></li>
     <li><a href="collapsible.html">Roasters</a></li>
-    <li><a href="collapsible.html">Users</a></li>
+    <li><%= link_to 'Users', users_path%></li>
     <li><a href="mobile.html">Account</a></li>
 </ul>
