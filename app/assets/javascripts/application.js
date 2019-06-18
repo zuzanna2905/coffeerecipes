@@ -17,7 +17,7 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).on('turbolinks:load', function () {
+document.addEventListener("turbolinks:load", function() {
     $('.sidenav').sidenav();
     $(".dropdown-trigger").dropdown();
 });
