@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :users, except: [:destroy]
   resources :recipes
+  resources :beans
+  resources :roasters
   get 'table', to: 'recipes#table'
   get 'favorites', to: 'recipes#favorites'
   get 'login', to: 'logins#new'

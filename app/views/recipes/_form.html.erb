@@ -5,67 +5,67 @@
         <%= form_for(@recipe, :html => {class: 'form-horizontal', role: 'form'}) do |f| %>
         <div class='row'> 
             <div class='input-field col s12'>
-                <%= f.label :roaster %>
+                <%= f.label :roaster, class: 'active'  %>
                 <%= f.text_field :roaster, placeholder: 'Coffee roaster', autofocus: true, required: true%>
             </div>
         </div>
         <div class='row'> 
             <div class='input-field col s12'>
-                <%= f.label :name %>
+                <%= f.label :name, class: 'active'  %>
                 <%= f.text_field :name, placeholder: 'Name of coffee', autofocus: true, required: true %>
             </div>
         </div>
         <div class='row'> 
             <div class='input-field col s12'>
-                <%= f.label :temperature %>
+                <%= f.label :temperature, class: 'active'  %>
                 <%= f.number_field :temperature, in: 60.0..100.0, step: 1.0, placeholder: 'Water temperature', required: true, autofocus: true %>
             </div>
         </div>
         <div class='row'> 
             <div class='input-field col s12'>
-                <%= f.label :water %>
+                <%= f.label :water, class: 'active'  %>
                 <%= f.number_field :water, step: 10.0, placeholder: 'Water mililiters', autofocus: true, required: true %>
             </div>
         </div>
         <div class='row'> 
             <div class='input-field col s12'>
-                <%= f.label :dose %>
+                <%= f.label :dose, class: 'active'  %>
                 <%= f.number_field :dose, step: 0.1, placeholder: 'Coffee gramature', autofocus: true, required: true %>
             </div>
         </div>
         <div class='row'> 
             <div class='input-field col s12'>
-                <%= f.label :time %>
+                <%= f.label :time, class: 'active'  %>
                 <%= f.time_field :time, placeholder: 'Pouring time', autofocus: true, required: true %>
             </div>
         </div>
         <div class='row'> 
             <div class='input-field col s12'>
-                <%= f.label :method %>
+                <%= f.label :method, class: 'active'  %>
                 <%= f.text_field :method, placeholder: 'Making method', autofocus: true, required: true %>
             </div>
         </div>
         <div class='row'> 
             <div class='input-field col s12'>
-                <%= f.label :grinder %>
+                <%= f.label :grinder, class: 'active'  %>
                 <%= f.text_field :grinder, placeholder: 'Grinder name', autofocus: true %>
             </div>
         </div>
         <div class='row'> 
             <div class='input-field col s12'>
-                <%= f.label :clicks %>
+                <%= f.label :clicks, class: 'active'  %>
                 <%= f.number_field :clicks, step: 1, placeholder: 'Number of clicks', autofocus: true %>
             </div>
         </div>
         <div class='row'> 
             <div class='input-field col s12'>
-                <%= f.label :rate %>
+                <%= f.label :rate, class: 'active'  %>
                 <%= f.number_field :rate, in: 1.0..5.0, step: 0.5, placeholder: 'Rate of recipe', autofocus: true %>
             </div>
         </div>
         <div class='row'> 
             <div class='input-field col s12'>
-                <%= f.label :description %>
+                <%= f.label :description, class: 'active'  %>
                 <%= f.text_area :description, class: 'materialize-textarea', rows: 10, placeholder: 'Description of recipe' %>
             </div>
         </div>

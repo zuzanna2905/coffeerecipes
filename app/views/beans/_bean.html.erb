@@ -1,0 +1,16 @@
+<ul>
+  <% obj.each { |bean| %>
+  <div class='card'>
+    <li class='center-align recipe'>
+      <span class="title">
+        <h5><%= link_to bean.name, bean_path(bean)%></h5>
+      </span>
+      <p><%= truncate(bean.description, length: 50) %></p>
+      <hr>
+      <small>
+        <%= time_ago_in_words(bean.created_at) %> age,
+        last updated: <%= time_ago_in_words(bean.updated_at) %> ago</small>
+    </li>
+  </div>
+  <% } %>
+</ul>

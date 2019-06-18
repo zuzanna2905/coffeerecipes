@@ -1,0 +1,52 @@
+<%= render 'shared/errors', obj: @bean %>
+
+<div class='row'>
+    <div class='col s12'>
+        <%= form_for(@bean, :html => {class: 'form-horizontal', role: 'form'}) do |f| %>
+        <div class='row'> 
+            <div class='input-field col s12'>
+                <%= f.label :roaster, class: 'active' %>
+                <%= f.select :roaster, options_for_select(Roaster.all.collect{ |u| [u.name, u.id] }, Roaster.first.id) %>
+            </div>
+        </div>
+        <div class='row'> 
+            <div class='input-field col s12'>
+                <%= f.label :name, class: 'active'  %>
+                <%= f.text_field :name, placeholder: 'Name of coffee', autofocus: true, required: true %>
+            </div>
+        </div>
+        <div class='row'> 
+            <div class='input-field col s12'>
+                <%= f.label :method, class: 'active'  %>
+                <%= f.text_field :method, placeholder: 'Roasting method', autofocus: true, required: true %>
+            </div>
+        </div>
+        <div class='row'> 
+            <div class='input-field col s12'>
+                <%= f.label :country, class: 'active'  %>
+                <%= f.text_field :country, placeholder: 'Country name of coffee', autofocus: true %>
+            </div>
+        </div>
+        <div class='row'> 
+            <div class='input-field col s12'>
+                <%= f.label :roast, class: 'active'  %>
+                <%= f.text_field :roast, rows: 10, placeholder: 'Roasting' %>
+            </div>
+        </div>
+        <div class='row'> 
+            <div class='input-field col s12'>
+                <%= f.label :description, class: 'active'  %>
+                <%= f.text_area :description, class: 'materialize-textarea', rows: 10, placeholder: 'Description of beans' %>
+            </div>
+        </div>
+        <div class='row'> 
+            <div class='input-field col s12'>
+                <%= f.submit 'Add coffee', class: 'btn btn-success btn-lg'%>
+            </div>
+        </div>
+        <% end %>
+        <div class='row'>
+            [ <%= link_to "Cancle request and return to beans listing", beans_path%> ]
+        </div>
+    </div>
+</div>

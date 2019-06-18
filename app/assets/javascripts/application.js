@@ -20,4 +20,5 @@
 document.addEventListener("turbolinks:load", function() {
     $('.sidenav').sidenav();
     $(".dropdown-trigger").dropdown();
+    $('select').formSelect();
 });

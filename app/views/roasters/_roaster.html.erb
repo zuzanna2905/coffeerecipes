@@ -1,0 +1,10 @@
+<% obj.each { |roaster| %>
+  <div class='row'>
+    <div class='col-xs-8 col-xs-offset-2'>
+      <div class='well well-lg'>
+        <h4><% if roaster.name %> <p><%= roaster.name%></p><%else%><%end%></h4>
+        <% if roaster.country %> <p>Country: <%= roaster.country%></p><%else%><%end%>
+      </div>
+    </div>
+  </div>
+<% } %>

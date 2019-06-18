@@ -1,5 +1,6 @@
-<ul class='collection'>
+<ul>
   <% obj.each { |recipe| %>
+  <div class='card'>
     <li class='center-align recipe'>
       <span class="title">
         <h5><%= link_to recipe.name, recipe_path(recipe)%> (<%= recipe.rate%>/5)</h5>
@@ -10,5 +11,6 @@
         <%= time_ago_in_words(recipe.created_at) %> age,
         last updated: <%= time_ago_in_words(recipe.updated_at) %> ago</small>
     </li>
+  </div>
   <% } %>
 </ul>
