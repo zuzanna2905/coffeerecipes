@@ -7,3 +7,18 @@
 .recipe {
     padding: 15px;
 }
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    margin-bottom: 25px;
+}
+
+.footer {
+    padding-bottom: 20px;
+}

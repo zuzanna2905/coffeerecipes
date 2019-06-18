@@ -1,7 +1,10 @@
 <div>
-    <h1 class='title'>Listing all roasters</h1>
+    <h4>Listing all roasters</h4>
     <div class='text-center'>
         <%= will_paginate %>
     </div>
     <%= render 'roaster', obj: @roasters %>
+    <div class='text-center'>
+        <%= will_paginate %>
+    </div>
 </div>

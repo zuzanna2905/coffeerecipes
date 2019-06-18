@@ -1,0 +1,11 @@
+<ul>
+  <% obj.each { |user| %>
+    <div class='card'>
+      <li class='center-align recipe'>
+        <span class="title">
+          <h5><%= user.email %></h5>
+        </span>
+      </li>
+    </div>
+  <% } %>
+</ul>

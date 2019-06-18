@@ -1,10 +1,12 @@
-<% obj.each { |roaster| %>
-  <div class='row'>
-    <div class='col-xs-8 col-xs-offset-2'>
-      <div class='well well-lg'>
-        <h4><% if roaster.name %> <p><%= roaster.name%></p><%else%><%end%></h4>
+<ul>
+  <% obj.each { |roaster| %>
+    <div class='card'>
+      <li class='center-align recipe'>
+        <span class="title">
+          <h5><%= link_to roaster.name, roaster_path(roaster)%></h5>
+        </span>
         <% if roaster.country %> <p>Country: <%= roaster.country%></p><%else%><%end%>
-      </div>
+      </li>
     </div>
-  </div>
-<% } %>
+  <% } %>
+</ul>
