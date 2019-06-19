@@ -10,8 +10,14 @@
                 <i class="material-icons right">arrow_drop_down</i>
             </a></li>
             <li><%= link_to 'Roasters', roasters_path%></li>
-            <li><%= link_to 'Users', users_path%></li>
-            <li><%= link_to 'Account', edit_user_path(current_user)%></li>
+            <% if logged_in? %>
+                <li><%= link_to 'Users', users_path%></li>
+                <li><%= link_to 'Account', edit_user_path(current_user)%></li>
+                <li><%= link_to 'Log out', logout_path %></li>
+            <% else %>
+                <li><%= link_to 'Log in', login_path %></li>
+                <li><%= link_to 'Register', new_user_path %></li>
+            <%end%>
         </ul>
     </div>
 </nav>
@@ -19,25 +25,33 @@
 <ul id="dropdown1" class="dropdown-content">
     <li><%= link_to 'Recipes', recipes_path%></li>
     <li><%= link_to 'Table', table_path%></li>
-    <li><%= link_to 'Add', new_recipe_path%></li>
-    <li><%= link_to 'Favorites', favorites_path%></li>
+    <% if logged_in? %>
+        <li><%= link_to 'Add', new_recipe_path%></li>
+        <li><%= link_to 'Favorites', favorites_path%></li>
+    <%end%>
 </ul>
 
 <ul id="dropdown2" class="dropdown-content">
     <li><%= link_to 'Recipes', recipes_path%></li>
     <li><%= link_to 'Table', table_path%></li>
-    <li><%= link_to 'Add', new_recipe_path%></li>
-    <li><%= link_to 'Favorites', favorites_path%></li>
+    <% if logged_in? %>
+        <li><%= link_to 'Add', new_recipe_path%></li>
+        <li><%= link_to 'Favorites', favorites_path%></li>
+    <%end%>
 </ul>
 
 <ul id="dropdown3" class="dropdown-content">
     <li><%= link_to 'Coffees', beans_path%></li>
-    <li><%= link_to 'Add', new_bean_path%></li>
+    <% if logged_in? %>
+        <li><%= link_to 'Add', new_bean_path%></li>
+    <%end%>
 </ul>
 
 <ul id="dropdown4" class="dropdown-content">
     <li><%= link_to 'Coffees', beans_path%></li>
-    <li><%= link_to 'Add', new_bean_path%></li>
+    <% if logged_in? %>
+        <li><%= link_to 'Add', new_bean_path%></li>
+    <%end%>
 </ul>
 
 <ul class="sidenav" id="mobile-demo">
@@ -48,6 +62,12 @@
         <i class="material-icons right">arrow_drop_down</i>
     </a></li>
     <li><%= link_to 'Roasters', roasters_path%></li>
-    <li><%= link_to 'Users', users_path%></li>
-    <li><%= link_to 'Account', edit_user_path(current_user)%></li>
+    <% if logged_in? %>
+        <li><%= link_to 'Users', users_path%></li>                
+        <li><%= link_to 'Account', edit_user_path(current_user)%></li>
+        <li><%= link_to 'Log out', logout_path %></li>
+    <% else %>
+        <li><%= link_to 'Log in', login_path %></li>
+        <li><%= link_to 'Log in', new_user_path %></li>
+    <%end%>
 </ul>
