@@ -20,7 +20,7 @@
         <tbody>
             <% @recipes.each do |recipe| %>
             <tr>
-                <td><%= link_to recipe.name, recipe_path(recipe) %></td>
+                <td><%= link_to recipe.bean.name, recipe_path(recipe) %></td>
                 <td><% if recipe.temperature %> <p><%= recipe.temperature%>C</p> <%else%> na <%end%></td>
                 <td><% if recipe.water %> <p> <%= recipe.water%>ml </p> <%else%><%end%></td>
                 <td><% if recipe.dose %> <p> <%= recipe.dose%>g </p><%else%><%end%></td>

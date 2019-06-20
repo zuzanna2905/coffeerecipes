@@ -21,4 +21,28 @@ document.addEventListener("turbolinks:load", function() {
     $('.sidenav').sidenav();
     $(".dropdown-trigger").dropdown();
     $('select').formSelect();
+    
+    $('select').on('contentChanged', function() {
+        $(this).formSelect();
+    });
+
+    jQuery(function() {
+        var beans;
+        beans = $('#recipe_bean_id').html();
+        return $('#recipe_roaster_id').change(function() {
+            var roaster, options;
+            roaster = $('#recipe_roaster_id :selected').text();
+            options = $(beans).filter("optgroup[label='" + roaster + "']").html();
+            if (options !== undefined) {
+                $('#recipe_bean_id').empty().html(options);
+                $("#recipe_bean_id").trigger('contentChanged');
+                return 
+            } else {
+                $('#recipe_bean_id').empty();
+                $("#recipe_bean_id").trigger('contentChanged');
+                return 
+            }
+        });
+    });
+
 });

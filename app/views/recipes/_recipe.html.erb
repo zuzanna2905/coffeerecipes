@@ -3,7 +3,7 @@
   <div class='card'>
     <li class='center-align recipe'>
       <span class="title">
-        <h5><%= link_to recipe.name, recipe_path(recipe)%> (<%= recipe.rate%>/5)</h5>
+        <h5><%= link_to recipe.bean.name, recipe_path(recipe)%> (<%= recipe.rate%>/5)</h5>
       </span>
       <p><%= truncate(recipe.description, length: 50) %></p>
       <hr>
