@@ -3,7 +3,7 @@
         <%= will_paginate %>
     </div>
     <h4>List of all recipes</h4>
-    <table class="responsive-table highlight">
+    <table class="responsive-table highlight striped centered">
         <thead>
             <tr>
             <th>Name</th>
@@ -21,14 +21,14 @@
             <% @recipes.each do |recipe| %>
             <tr>
                 <td><%= link_to recipe.bean.name, recipe_path(recipe) %></td>
-                <td><% if recipe.temperature %> <p><%= recipe.temperature%>C</p> <%else%> na <%end%></td>
-                <td><% if recipe.water %> <p> <%= recipe.water%>ml </p> <%else%><%end%></td>
-                <td><% if recipe.dose %> <p> <%= recipe.dose%>g </p><%else%><%end%></td>
-                <td><% if recipe.time %> <p> <%= recipe.time.strftime('%H:%M')%> </p><%else%><%end%></td>
-                <td><% if recipe.method %> <p> <%= recipe.method%> </p><%else%><%end%></td>
-                <td><% if recipe.grinder %> <p> <%= recipe.grinder%></p><%else%><%end%></td>
-                <td><% if recipe.clicks %> <p> <%= recipe.clicks%></p><%else%><%end%></td>
-                <td><% if recipe.rate %> <p> <%= recipe.rate%></p><%else%><%end%></td>
+                <td><% if recipe.temperature %><%= recipe.temperature%>C<%else%> na <%end%></td>
+                <td><% if recipe.water %><%= recipe.water%>ml <%else%><%end%></td>
+                <td><% if recipe.dose %> <%= recipe.dose%>g <%else%><%end%></td>
+                <td><% if recipe.time %> <%= recipe.time.strftime('%H:%M')%> <%else%><%end%></td>
+                <td><% if recipe.method %> <%= recipe.method%> <%else%><%end%></td>
+                <td><% if recipe.grinder %> <%= recipe.grinder%><%else%><%end%></td>
+                <td><% if recipe.clicks %> <%= recipe.clicks%><%else%><%end%></td>
+                <td><% if recipe.rate %> <%= recipe.rate%><%else%><%end%></td>
             </tr>
             <% end %>
         </tbody>

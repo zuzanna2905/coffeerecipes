@@ -52,7 +52,7 @@ class RecipesController < ApplicationController
   
     private
     def recipe_params
-      params.require(:recipe).permit(:bean, :roaster, :temperature, :water, :dose, :method, :grinder, :clicks, :time, :description, :rate)
+      params.require(:recipe).permit(:bean_id, :roaster_id, :temperature, :water, :dose, :method, :grinder, :clicks, :time, :description, :rate)
     end
   
     def set_recipe

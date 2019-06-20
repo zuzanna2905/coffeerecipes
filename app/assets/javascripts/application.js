@@ -28,6 +28,7 @@ document.addEventListener("turbolinks:load", function() {
 
     jQuery(function() {
         var beans;
+        $('#recipe_bean_id').parent().hide();
         beans = $('#recipe_bean_id').html();
         return $('#recipe_roaster_id').change(function() {
             var roaster, options;
@@ -36,11 +37,11 @@ document.addEventListener("turbolinks:load", function() {
             if (options !== undefined) {
                 $('#recipe_bean_id').empty().html(options);
                 $("#recipe_bean_id").trigger('contentChanged');
-                return 
+                return $('#recipe_bean_id').parent().show();
             } else {
                 $('#recipe_bean_id').empty();
                 $("#recipe_bean_id").trigger('contentChanged');
-                return 
+                return $('#recipe_bean_id').parent().hide();
             }
         });
     });
