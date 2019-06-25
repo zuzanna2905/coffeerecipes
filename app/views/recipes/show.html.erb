@@ -18,15 +18,19 @@
                 <% if @recipe.clicks %> <p>Clicks: <%= @recipe.clicks%></p><%else%><%end%>
             </div>
             <div class='col l12 m12 s12'>        
-                <% if @recipe.description.length > 0 %> <p>Description: <%= simple_format(@recipe.description)%></p><%else%><%end%>
+              <% if @recipe.description.length > 0 %> <p>Description: <%= simple_format(@recipe.description)%></p><%else%><%end%>
             </div>
           </div>
           <p><small class='white-text'>Created by: <%= @recipe.user.email%></small> </p>
           <% if current_user == @recipe.user %>
-              <%= link_to "Edit", edit_recipe_path(@recipe), class: 'btn btn-success btn-sm' %>  
-              <%= link_to "Delete", recipe_path(@recipe), 
-                  method: :delete, 
-                  data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm'  %> 
+            <%= link_to "Edit", edit_recipe_path(@recipe), class: 'btn btn-success btn-sm' %>  
+            <%= link_to "Delete", recipe_path(@recipe), 
+              method: :delete, 
+              data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm'  %> 
+          <% end %>
+          <% if logged_in? %>
+            <%= link_to "Add to favorites", favorites_new_path(:favorite => {:recipe_id => @recipe.id}),
+              class: 'btn btn-danger btn-sm'  %> 
           <% end %>
           <%= link_to "View all recipes", recipes_path, class: 'btn btn-info btn-sm' %>
         </div>

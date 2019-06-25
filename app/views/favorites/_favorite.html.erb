@@ -1,0 +1,12 @@
+<ul>
+  <% obj.each { |fav| %>
+  <div class='card'>
+    <li class='center-align recipe'>
+      <span class="title">
+        <h5><%= link_to fav.recipe.bean.name, recipe_path(fav.recipe)%> (<%= fav.recipe.rate%>/5)</h5>
+      </span>
+      <p><%= truncate(fav.recipe.description, length: 50) %></p>
+    </li>
+  </div>
+  <% } %>
+</ul>

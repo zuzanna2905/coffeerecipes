@@ -1,0 +1,10 @@
+<div class='center-align'>
+    <h4>Favorite recipes</h4>
+    <div>
+        <%= will_paginate %>
+    </div>
+    <%= render 'favorite', obj: @favorites %>
+    <div>
+        <%= will_paginate %>
+    </div>
+</div>
