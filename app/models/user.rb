@@ -8,4 +8,5 @@ class User < ApplicationRecord
               format: { with: VALID_EMAIL_REGEX }
     has_secure_password
     has_many :recipes, dependent: :destroy
+    has_many :favorites
 end

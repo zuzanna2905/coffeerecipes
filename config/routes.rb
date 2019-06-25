@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :beans
   resources :roasters
   get 'table', to: 'recipes#table'
-  get 'favorites', to: 'recipes#favorites'
+  get 'favorites', to: 'favorites#index'
+  get 'favorites/new', to: 'favorites#create'
   get 'login', to: 'logins#new'
   post 'login', to: 'logins#create'
   delete 'logout', to: 'logins#destroy'
