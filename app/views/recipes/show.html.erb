@@ -29,8 +29,18 @@
               data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm'  %> 
           <% end %>
           <% if logged_in? %>
-            <%= link_to "Add to favorites", favorites_new_path(:favorite => {:recipe_id => @recipe.id}),
-              class: 'btn btn-danger btn-sm'  %> 
+            <% if current_user.favorites.exists?(recipe_id: @recipe.id) %>
+              <%= link_to "Delete from favorites", 
+                  remove_favorite_path(:recipe_id => @recipe.id), 
+                  method: :delete,
+                  data: {confirm: 'Are you sure?'}, 
+                  class: 'btn btn-danger btn-sm'  %> 
+            <% else %>
+              <%= link_to "Add to favorites", 
+                  add_favorite_path(:recipe_id => @recipe.id), 
+                  method: :post,
+                  class: 'btn btn-danger btn-sm'  %> 
+            <% end %>
           <% end %>
           <%= link_to "View all recipes", recipes_path, class: 'btn btn-info btn-sm' %>
         </div>

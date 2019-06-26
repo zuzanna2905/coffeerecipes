@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
 
   def edit
   end
-  
+
   def update
     if @recipe.update(recipe_params)
       flash[:success] = 'Recipe was successfully updated!'

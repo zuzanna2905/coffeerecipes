@@ -1,24 +1,27 @@
 class FavoritesController < ApplicationController
-    def index
-      @favorites = Favorite.paginate(page: params[:page], per_page: 5)
-    end
 
-    def new
-      @favorite = Favorite.new
-    end
+  def index
+    @favorites = Favorite.where(user_id: current_user.id).paginate(page: params[:page], per_page: 5)
+  end
+
+  def new
+  end
 
   def create
-    @favorite = Favorite.new(favorite_params)
-    @favorite.user_id = current_user.id
-    if @favorite.save
-      flash[:success] = 'Favorite was successfully created!'
+    favorite = Recipe.find(params[:recipe_id])
+    unless current_user.favorites.include?(favorite)
+      Favorite.create(recipe: favorite, user: current_user)
+      flash[:success] = 'Favorite was successfully added!'
+      redirect_to favorites_path
+    else
+      flash[:success] = 'Something was wrong with your favorites'
       redirect_to favorites_path
     end
   end
 
-  private 
-  def favorite_params
-    params.require(:favorite).permit(:recipe_id)
+  def destroy
+    Favorite.where(recipe: params[:recipe_id],user: current_user).first.destroy
+    flash[:danger] = 'Recipe was successfully destroyed!'
+    redirect_to recipes_path
   end
-
 end
