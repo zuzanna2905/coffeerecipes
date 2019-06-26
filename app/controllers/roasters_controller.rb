@@ -3,4 +3,8 @@ class RoastersController < ApplicationController
     def index
         @roasters = Roaster.paginate(page: params[:page], per_page: 5)
     end
+
+    def show
+        @roaster = Roaster.find(params[:id])
+    end
 end  
