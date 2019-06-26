@@ -7,7 +7,9 @@
       </span>
       <p><%= truncate(recipe.description, length: 50) %></p>
       <hr>
-      <small>Created by <%= recipe.user.email%> <br>
+      <small>
+        <p>Likes: <%= recipe.favorites.count %></p>
+        Created by <%= recipe.user.email%> <br>
         <%= time_ago_in_words(recipe.created_at) %> age,
         last updated: <%= time_ago_in_words(recipe.updated_at) %> ago</small>
     </li>
