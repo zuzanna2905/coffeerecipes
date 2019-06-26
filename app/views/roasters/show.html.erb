@@ -2,11 +2,12 @@
     <div class="col s12 m12">
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
-          <span class="card-title"><%= @roaster.name %></span>   
+          <span class="card-title"><h4><%= @roaster.name %></h4></span>   
         </div>
         <div class="card-action">
           <div class='row white-text'>       
             <div class='col m12 s12 l12'>
+                <h5>List of coffees</h5>
                 <ul>
                     <% @roaster.beans.each { |bean| %>
                             <li class='center-align recipe'>
@@ -16,7 +17,7 @@
                 </ul>
             </div>
           </div>
-            <%= link_to "View all roaster", roasters_path, class: 'btn btn-info btn-sm' %>
+            <%= link_to "View all roasters", roasters_path, class: 'btn btn-info btn-sm' %>
         </div>
       </div>
     </div>
