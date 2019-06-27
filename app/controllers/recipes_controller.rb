@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
-    @recipes = Recipe.paginate(page: params[:page], per_page: 6)
+    @recipes = Recipe.search(params[:search]).paginate(page: params[:page], per_page: 6)
   end
 
   def new
