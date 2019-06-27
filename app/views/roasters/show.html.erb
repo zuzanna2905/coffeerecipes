@@ -10,7 +10,7 @@
                 <h5>List of coffees</h5>
                 <ul>
                     <% @roaster.beans.each { |bean| %>
-                            <li class='center-align recipe'>
+                            <li class='center-align'>
                                 <%= link_to bean.name, bean_path(bean) %>
                             </li>
                     <% } %>

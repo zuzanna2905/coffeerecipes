@@ -1,11 +1,12 @@
-<ul>
+<ul class='row'>
   <% obj.each { |roaster| %>
-    <div class='card'>
-      <li class='center-align recipe'>
+    <div class='card col s12 m6 l4'>
+      <li class='center-align roaster'>
         <span class="title">
           <h5><%= link_to roaster.name, roaster_path(roaster)%></h5>
         </span>
         <% if roaster.country %> <p>Country: <%= roaster.country%></p><%else%><%end%>
+        <p>Coffees: <%= roaster.beans.count %></p>
       </li>
     </div>
   <% } %>

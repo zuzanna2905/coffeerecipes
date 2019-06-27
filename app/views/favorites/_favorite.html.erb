@@ -1,7 +1,7 @@
-<ul>
+<ul class='row'>
   <% obj.each { |fav| %>
-  <div class='card'>
-    <li class='center-align recipe'>
+  <div class='card col s12 m6 l4'>
+    <li class='center-align favorite'>
       <span class="title">
         <h5><%= link_to fav.recipe.bean.name, recipe_path(fav.recipe)%> (<%= fav.recipe.rate%>/5)</h5>
       </span>

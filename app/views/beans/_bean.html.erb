@@ -1,6 +1,6 @@
-<ul>
+<ul class='row'>
   <% obj.each { |bean| %>
-  <div class='card col s8 m8 l8'>
+  <div class='card col s12 m6 l6 bean'>
     <li class='center-align recipe'>
       <span class="title">
         <h5><%= bean.roaster.name %>: <%= link_to bean.name, bean_path(bean)%></h5>

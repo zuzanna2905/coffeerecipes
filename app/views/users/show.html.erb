@@ -10,7 +10,7 @@
                 <h5>List of coffee recipes</h5>
                 <ul>
                     <% @user.recipes.each { |recipe| %>
-                            <li class='center-align recipe'>
+                            <li class='center-align'>
                                 <%= link_to recipe.bean.name, recipe_path(recipe) %>
                             </li>
                     <% } %>

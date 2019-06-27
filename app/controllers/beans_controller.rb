@@ -3,7 +3,7 @@ class BeansController < ApplicationController
   before_action :set_bean, only:  [:show, :edit, :update]
 
   def index
-    @beans = Bean.paginate(page: params[:page], per_page: 5)
+    @beans = Bean.paginate(page: params[:page], per_page: 6)
   end
 
   def new

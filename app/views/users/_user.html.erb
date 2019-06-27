@@ -1,7 +1,7 @@
-<ul>
+<ul class='row'>
   <% obj.each { |user| %>
-    <div class='card'>
-      <li class='center-align recipe'>
+    <div class='card col s12 m6 l4'>
+      <li class='center-align user'>
         <span class="title">
           <h5><%= link_to user.email, user_path(user) %></h5>
         </span>
