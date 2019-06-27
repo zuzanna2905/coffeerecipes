@@ -6,6 +6,7 @@
     <table class="responsive-table highlight striped centered">
         <thead>
             <tr>
+            <th>Roaster</th>
             <th>Name</th>
             <th>Temperature</th>
             <th>Water</th>
@@ -15,12 +16,14 @@
             <th>Grinder</th>
             <th>Clicks</th>
             <th>Rate [1-5]</th>
+            <th>Likes</th>
             </tr>
         </thead>
         <tbody>
             <% @recipes.each do |recipe| %>
             <tr>
-                <td><%= link_to recipe.bean.name, recipe_path(recipe) %></td>
+                <td><%= link_to recipe.roaster.name, roaster_path(recipe.roaster) %></td>
+                <td><%= link_to truncate(recipe.bean.name, length: 25), recipe_path(recipe) %></td>
                 <td><% if recipe.temperature %><%= recipe.temperature%>C<%else%> na <%end%></td>
                 <td><% if recipe.water %><%= recipe.water%>ml <%else%><%end%></td>
                 <td><% if recipe.dose %> <%= recipe.dose%>g <%else%><%end%></td>
@@ -29,6 +32,7 @@
                 <td><% if recipe.grinder %> <%= recipe.grinder%><%else%><%end%></td>
                 <td><% if recipe.clicks %> <%= recipe.clicks%><%else%><%end%></td>
                 <td><% if recipe.rate %> <%= recipe.rate%><%else%><%end%></td>
+                <td><%= recipe.favorites.count %></td>
             </tr>
             <% end %>
         </tbody>
