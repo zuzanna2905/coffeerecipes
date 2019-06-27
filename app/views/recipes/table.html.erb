@@ -2,7 +2,13 @@
     <div>
         <%= will_paginate %>
     </div>
-    <h4>List of all recipes</h4>
+    <h4>List of all recipes(<%=@recipes.count%>)</h4>
+        <%= form_tag table_path, method: :get do %>
+        <p class='row'>
+            <%= text_field_tag :search, params[:search], class: 'col s12 m10 l10' %>
+            <%= submit_tag "Search", :bean => nil, class: 'btn col s12 m2 l2' %>
+        </p>
+    <% end %>
     <table class="responsive-table highlight striped centered">
         <thead>
             <tr>

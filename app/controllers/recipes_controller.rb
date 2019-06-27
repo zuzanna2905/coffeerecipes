@@ -24,7 +24,7 @@ class RecipesController < ApplicationController
   end
 
   def table
-    @recipes = Recipe.paginate(page: params[:page], per_page: 10)
+    @recipes = Recipe.search(params[:search]).paginate(page: params[:page], per_page: 10)
   end
 
   def create
