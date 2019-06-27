@@ -1,9 +1,9 @@
 <div class='center-align'>
-    <h4>Listing all recipes</h4>
+    <h4>Listing all recipes (<%=@recipes.count%>)</h4>
     <%= form_tag recipes_path, method: :get do %>
-        <p>
-            <%= text_field_tag :search, params[:search] %>
-            <%= submit_tag "Search", :bean => nil %>
+        <p class='row'>
+            <%= text_field_tag :search, params[:search], class: 'col s12 m10 l10' %>
+            <%= submit_tag "Search", :bean => nil, class: 'btn col s12 m2 l2' %>
         </p>
     <% end %>
     <div>
