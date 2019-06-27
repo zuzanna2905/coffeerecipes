@@ -6,9 +6,9 @@ class Recipe < ApplicationRecord
 
     def self.search(search)
         if search
-          joins(:bean).where("beans.name like ?", "%#{search}%").all
+          joins(:bean).where("beans.name like ?", "%#{search}%").order(likes: :desc)
         else
-          all
+          all.order(likes: :desc)
         end
     end
 
