@@ -46,7 +46,7 @@ RSpec.describe BeansController, type: :controller do
             create_roaster
             @bean = create_bean
             get :edit, params: { id: @bean.id }
-            expect(response).to redirect_to('/beans')
+            expect(response).to redirect_to('/recipes')
         end
 
         it 'SHOW bean page' do
