@@ -1,7 +1,7 @@
 class BeansController < ApplicationController
   skip_before_action :require_user, only: [:index, :show]
   before_action :set_bean, only: [:show, :edit, :update]
-  before_action :require_admin, only: [:edit, :update]
+  before_action :require_admin, only: [:edit, :update, :destroy]
 
   def index
     @beans = Bean.paginate(page: params[:page], per_page: 6)

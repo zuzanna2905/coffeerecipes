@@ -28,4 +28,12 @@ module SpecTestHelper
       Bean.create!(name: 'Peru El Diamante', method: 'Washed', country: 'Peru', roast: 'light', description: 'Varietal: Caturra', roaster_id: 1)
     end
 
+    def create_recipe
+      Recipe.create!(user_id: 1, bean_id: 1, roaster_id: 1, temperature: 90, water: 500, dose: 30, method: 'V60', grinder: 'Comandante', clicks: 15, time: Time.now, description: 'non', rate: 5, likes: 0)
+    end
+
+    def create_favorite
+      Favorite.create!(recipe_id: 1, user_id: 1)
+    end
+
 end
