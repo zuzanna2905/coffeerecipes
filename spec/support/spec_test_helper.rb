@@ -3,7 +3,11 @@ module SpecTestHelper
       user = User.find_by(email: user.email)
       request.session[:user_id] = user.id
     end
-  
+
+    def is_admin?(user)
+      user.admin
+    end
+
     def current_user
       User.find(request.session[:user_id])
     end
@@ -11,4 +15,17 @@ module SpecTestHelper
     def create_user
       User.create!(name: 'Jon', email: 'jon@gmail.com', password: 'jon123', password_confirmation: 'jon123')
     end
+
+    def create_admin
+      User.create!(name: 'Jon', email: 'jon@gmail.com', password: 'jon123', password_confirmation: 'jon123', admin: true)
+    end
+
+    def create_roaster
+      Roaster.create!(name: 'Audun Coffee', country: 'Poland')
+    end
+
+    def create_bean
+      Bean.create!(name: 'Peru El Diamante', method: 'Washed', country: 'Peru', roast: 'light', description: 'Varietal: Caturra', roaster_id: 1)
+    end
+
 end
