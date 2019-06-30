@@ -8,7 +8,11 @@ class UsersController < ApplicationController
     end
 
     def new
-        @user = User.new
+        if logged_in?
+            redirect_to users_path
+        else
+            @user = User.new
+        end
     end
 
     def show
@@ -48,7 +52,7 @@ class UsersController < ApplicationController
     def require_same_user
         if current_user != @user
             flash[:success] = 'You can only edit your own profile'
-            redirect_to user_path(user_user)
+            redirect_to user_path(@user)
         end
     end
 end
