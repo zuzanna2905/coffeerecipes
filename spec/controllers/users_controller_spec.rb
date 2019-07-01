@@ -50,7 +50,7 @@ RSpec.describe UsersController, type: :controller do
             expect(response).to render_template("users/edit")
         end
 
-        it 'redirect from other user account EDIT page' do
+        it 'redirect from another user account EDIT page' do
             @user2 = User.create!(name: 'Arya', email: 'arya@gmail.com', password: 'arya123', password_confirmation: 'arya123')
             get :edit, params: { id: @user2.id }
             expect(response).to redirect_to("/users/#{@user2.id}")
