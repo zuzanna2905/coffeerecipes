@@ -16,6 +16,10 @@ module SpecTestHelper
       User.create!(name: 'Jon', email: 'jon@gmail.com', password: 'jon123', password_confirmation: 'jon123')
     end
 
+    def create_user2
+      User.create!(name: 'Arya', email: 'arya@gmail.com', password: 'arya123', password_confirmation: 'arya123')      
+    end
+
     def create_admin
       User.create!(name: 'Jon', email: 'jon@gmail.com', password: 'jon123', password_confirmation: 'jon123', admin: true)
     end
