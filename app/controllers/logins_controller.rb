@@ -1,6 +1,9 @@
 class LoginsController < ApplicationController
     skip_before_action :require_user, only: [:new, :create]
     def new
+        if logged_in?
+            redirect_to recipes_path
+        end
     end
 
     def create
