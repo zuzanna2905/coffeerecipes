@@ -7,6 +7,7 @@ class User < ApplicationRecord
               length: { minimum: 3, maximum: 25},
               format: { with: VALID_EMAIL_REGEX }
     has_secure_password
+    validates :password_confirmation, presence: true
     has_many :recipes, dependent: :destroy
     has_many :favorites
 end
