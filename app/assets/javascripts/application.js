@@ -18,9 +18,10 @@
 //= require_tree .
 
 document.addEventListener("turbolinks:load", function() {
-    $('.sidenav').sidenav();
     $(".dropdown-trigger").dropdown();
     $('select').formSelect();
+    elem = document.querySelector('.sidenav');
+    instance = new M.Sidenav(elem, {});
     
     $('select').on('contentChanged', function() {
         $(this).formSelect();
@@ -45,5 +46,12 @@ document.addEventListener("turbolinks:load", function() {
             }
         });
     });
-
 });
+
+$(document).on('ready turbolinks:before-render', function() {
+    elem = document.querySelector('.sidenav');
+    instance = M.Sidenav.getInstance(elem);
+    if (instance){
+      instance.destroy();
+    }
+})
