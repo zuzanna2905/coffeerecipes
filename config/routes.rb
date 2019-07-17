@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root 'home#index'
   resources :users, except: [:destroy]
-  resources :recipes
+  resources :recipes do 
+    resources :comments
+  end
   resources :beans
   resources :roasters
   get 'table', to: 'recipes#table'

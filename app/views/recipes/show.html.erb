@@ -45,6 +45,12 @@
           <% end %>
           <%= link_to "View all recipes", recipes_path, class: 'btn btn-info btn-sm' %>
         </div>
+        <div id='comments' class='white-text'>
+          <h5><%= @recipe.comments.count %> comments </h5>
+          <%= render @recipe.comments %>
+          <h6>Join discussion:</h6>
+          <%= render 'comments/form' %>
+        </div>
       </div>
     </div>
   </div>

@@ -10,4 +10,5 @@ class User < ApplicationRecord
     validates :password_confirmation, presence: true
     has_many :recipes, dependent: :destroy
     has_many :favorites
+    has_many :comments
 end

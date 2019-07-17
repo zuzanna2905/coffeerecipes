@@ -3,6 +3,7 @@ class Recipe < ApplicationRecord
     belongs_to :roaster, foreign_key: "roaster_id"
     belongs_to :bean, foreign_key: "bean_id"
     has_many :favorites
+    has_many :comments
 
     validates :user_id, presence: true
     validates :roaster_id, presence: true

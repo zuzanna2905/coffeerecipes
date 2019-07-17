@@ -1,0 +1,8 @@
+<div class='row'> 
+  <div class='col s8 offset-s2 comment'>
+    <p class=comment_author> <%= comment.user.name %> </p>
+    <p class=comment_title> <%= comment.title %> </p>
+    <p class=comment_content> <%= comment.content %> </p>
+    <p class=comment_time> <%= time_ago_in_words(comment.created_at)%> ago </p>
+  </div>
+</div>
