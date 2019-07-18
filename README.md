@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+It’s a multi-user application to find, rate and make notes about coffee beans along with the best recipes to bring out the best out of them.
 
-Things you may want to cover:
+* Technologies: Ruby on Rails, JavaScript, Materialize, Heroku, RSpec/Capybara
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Check on: https://coffeerecipes.herokuapp.com/
