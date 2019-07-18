@@ -6,7 +6,7 @@
             <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Recipes
                 <i class="material-icons right">arrow_drop_down</i>
             </a></li>            
-            <li><a class="dropdown-trigger" href="#" data-target="dropdown3">Coffee
+            <li><a class="dropdown-trigger" href="#" data-target="dropdown2">Coffee
                 <i class="material-icons right">arrow_drop_down</i>
             </a></li>
             <li><%= link_to 'Roasters', roasters_path%></li>
@@ -32,21 +32,6 @@
 </ul>
 
 <ul id="dropdown2" class="dropdown-content">
-    <li><%= link_to 'Recipes', recipes_path%></li>
-    <li><%= link_to 'Table', table_path%></li>
-    <% if logged_in? %>
-        <li><%= link_to 'Add', new_recipe_path%></li>
-    <%end%>
-</ul>
-
-<ul id="dropdown3" class="dropdown-content">
-    <li><%= link_to 'Coffees', beans_path%></li>
-    <% if logged_in? %>
-        <li><%= link_to 'Add', new_bean_path%></li>
-    <%end%>
-</ul>
-
-<ul id="dropdown4" class="dropdown-content">
     <li><%= link_to 'Coffees', beans_path%></li>
     <% if logged_in? %>
         <li><%= link_to 'Add', new_bean_path%></li>
@@ -54,12 +39,15 @@
 </ul>
 
 <ul class="sidenav" id="mobile-demo">
-    <li><a class="dropdown-trigger" href="#" data-target="dropdown2">Recipes
-        <i class="material-icons right">arrow_drop_down</i>
-    </a></li>
-    <li><a class="dropdown-trigger" href="#" data-target="dropdown4">Coffee
-        <i class="material-icons right">arrow_drop_down</i>
-    </a></li>
+    <li><%= link_to 'Recipes', recipes_path%></li>
+    <li><%= link_to 'Table', table_path%></li>
+    <% if logged_in? %>
+        <li><%= link_to 'Add Recipe', new_recipe_path%></li>
+    <%end%>
+    <li><%= link_to 'Coffees', beans_path%></li>
+    <% if logged_in? %>
+        <li><%= link_to 'Add Coffee', new_bean_path%></li>
+    <%end%>
     <li><%= link_to 'Roasters', roasters_path%></li>
     <% if logged_in? %>
         <li><%= link_to 'Favorites', favorites_path%></li>
@@ -68,6 +56,6 @@
         <li><%= link_to 'Log out', logout_path %></li>
     <% else %>
         <li><%= link_to 'Log in', login_path %></li>
-        <li><%= link_to 'Log in', new_user_path %></li>
+        <li><%= link_to 'Sign up', new_user_path %></li>
     <%end%>
 </ul>
