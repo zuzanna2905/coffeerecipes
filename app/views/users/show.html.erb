@@ -8,9 +8,9 @@
           <div class='row white-text'>       
             <div class='col m12 s12 l12'>
                 <h5>List of coffee recipes</h5>
-                <ul>
+                <ul class='col s12 m6 offset-m4'>
                     <% @user.recipes.each { |recipe| %>
-                            <li class='center-align'>
+                            <li class='left-align'>
                                 <%= link_to recipe.bean.name, recipe_path(recipe) %>
                             </li>
                     <% } %>

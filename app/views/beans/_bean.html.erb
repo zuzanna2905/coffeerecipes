@@ -1,7 +1,7 @@
 <ul class='row'>
   <% obj.each { |bean| %>
-  <div class='card col s12 m6 l6 bean'>
-    <li class='center-align recipe'>
+  <div class='card col s12 m6 l6'>
+    <li class='center-align bean'>
       <span class="title">
         <h5><%= bean.roaster.name %>: <%= link_to bean.name, bean_path(bean)%></h5>
       </span>

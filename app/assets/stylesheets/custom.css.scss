@@ -26,11 +26,15 @@ $break-small: 360px;
     .brand-logo {
         font-size: large !important;
     }
+    h5 {
+        font-weight: 100;
+        font-size: x-large;
+    }
 }
 
 .recipe {
     padding: 15px;
-    min-height: 350px;
+    min-height: 280px;
     @media screen and (max-width: $break-small) {
         min-height: 100px;
         float: none;
@@ -47,7 +51,14 @@ $break-small: 360px;
 }
 
 .bean {
-    height: 200px;
+    min-height: 150px;
+    @media screen and (max-width: $break-small) {
+        min-height: 100px;
+        h5 {
+            font-weight: 100;
+            font-size: large
+        }
+    }
 }
 
 .roaster {

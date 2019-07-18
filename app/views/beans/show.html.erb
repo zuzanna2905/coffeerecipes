@@ -6,13 +6,15 @@
         </div>
         <div class="card-action">
           <div class='row white-text'>       
-            <div class='col m6 s6 l6'>
-                <% if @bean.name %> <p>Name: <%= @bean.name%></p> <%else%><%end%>
-                <% if @bean.roaster %> <p>Roasters:  <%= @bean.roaster.name %></p> <%else%><%end%>
-                <% if @bean.country %> <p>Country of coffee: <%= @bean.country%></p><%else%><%end%>
-                <% if @bean.method %> <p>Method of processing: <%= @bean.method%> </p><%else%><%end%>
-                <% if @bean.roast %> <p>Level of roasting: <%= @bean.roast%> </p><%else%><%end%>
-                <% if @bean.description.length > 0 %> <p>Description: <%= simple_format(@bean.description)%></p><%else%><%end%>
+            <div class='col m6 s12 l4 offset-l1 left-align'>
+                <p><% if @bean.name %> Name: <%= @bean.name %><%else%><%end%></p>
+                <p><% if @bean.roaster %> Roasters:  <%= @bean.roaster.name %> <%else%><%end%></p>
+                <p><% if @bean.country %>Country of coffee: <%= @bean.country %><%else%><%end%></p>
+                <p><% if @bean.method %>Method of processing: <%= @bean.method %><%else%><%end%></p>
+                <p><% if @bean.roast %>Level of roasting: <%= @bean.roast %><%else%><%end%></p>
+                <p><% if @bean.description.length > 0 %> Description: <%= simple_format(@bean.description)%> <%else%><%end%></p>
+            </div>
+            <div class='col m6 l6 s12'>
             </div>
           </div>
             <% if is_admin? %>

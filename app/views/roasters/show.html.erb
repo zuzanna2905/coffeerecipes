@@ -8,12 +8,12 @@
           <div class='row white-text'>       
             <div class='col m12 s12 l12'>
                 <h5>List of coffees</h5>
-                <ul>
-                    <% @roaster.beans.each { |bean| %>
-                            <li class='center-align'>
-                                <%= link_to bean.name, bean_path(bean) %>
-                            </li>
-                    <% } %>
+                <ul class='col s12 m6 offset-m4'>
+                  <% @roaster.beans.each { |bean| %>
+                    <li class='left-align'>
+                        <%= link_to bean.name, bean_path(bean) %>
+                    </li>
+                  <% } %>
                 </ul>
             </div>
           </div>
