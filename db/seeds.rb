@@ -29,7 +29,7 @@ Roaster.create(name: 'Lavazza', country: 'Italy')
 Roaster.create(name: 'Rocket Bean', country: 'Latvia')
 Roaster.create(name: 'Solberg & Hansen', country: 'Norway')
 
-Bean.create(name: '', method: '', country: '', roast: '', description: 'Varietal: ', roaster_id: )
+#Bean.create(name: '', method: '', country: '', roast: '', description: 'Varietal: ', roaster_id: )
 Bean.create(name: 'Salwador El Martillo Espresso', method: 'Natural', country: 'Salwador', roast: 'medium', description: 'Varietal: Bourbon, Catuai', roaster_id: 1)
 Bean.create(name: 'Etiopia Boji', method: 'Washed', country: 'Ethiopia', roast: 'light', description: 'Varietal: Heirloom', roaster_id: 1)
 Bean.create(name: 'Brazylia Fazenda Rainha Miaki', method: 'Natural', country: 'Brazylia', roast: 'light', description: 'Varietal: Yellow Bourbon', roaster_id: 1)
