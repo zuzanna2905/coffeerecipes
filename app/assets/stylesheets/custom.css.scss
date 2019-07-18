@@ -1,12 +1,41 @@
 @import "materialize";
 
+$break-small: 360px;
+
 .nav-wrapper {
     margin-left: 10px;
 }
 
+
+@media screen and (max-width: $break-small) {
+    .card-title {
+        font-size: large !important;
+    }
+    .card-action {
+        font-size: medium;
+        text-align: left;
+        font-weight: 100;
+    }
+    .btn {
+        margin: 3px;
+    }
+    h4 {
+        font-weight: 100;
+        font-size: x-large;
+    }
+}
+
 .recipe {
     padding: 15px;
-    height: 350px;
+    min-height: 350px;
+    @media screen and (max-width: $break-small) {
+        min-height: 100px;
+        float: none;
+        h5 {
+            font-weight: 100;
+            font-size: large
+        }
+    }
 }
 
 .favorite {
@@ -46,5 +75,10 @@ main {
 }
 
 .comment {
-    border: 1px solid white;
+    line-height: 0;
+    @media screen and (max-width: $break-small) {
+        p {
+            text-align: left;
+        }
+    }
 }

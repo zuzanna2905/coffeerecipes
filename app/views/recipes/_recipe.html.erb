@@ -5,14 +5,16 @@
       <span class="title">
         <h5><%= link_to recipe.bean.name, recipe_path(recipe)%> (<%= recipe.rate%>/5)</h5>
       </span>
-      <p>Roaster: <%= recipe.roaster.name %></p>
-      <p><%= truncate(recipe.description, length: 50) %></p>
-      <hr>
-      <small>
-        <p>Likes: <%= recipe.favorites.count %></p>
-        Created by <%= recipe.user.email%> <br>
-        <%= time_ago_in_words(recipe.created_at) %> age,
-        last updated: <%= time_ago_in_words(recipe.updated_at) %> ago</small>
+      <div class='hide-on-small-only'>
+        <p>Roaster: <%= recipe.roaster.name %></p>
+        <p><%= truncate(recipe.description, length: 50) %></p>
+        <hr>
+        <small>
+          <p>Likes: <%= recipe.favorites.count %></p>
+          Created by <%= recipe.user.email%> <br>
+          <%= time_ago_in_words(recipe.created_at) %> age,
+          last updated: <%= time_ago_in_words(recipe.updated_at) %> ago</small>
+      </div>
     </li>
   </div>
   <% } %>

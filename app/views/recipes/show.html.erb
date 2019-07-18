@@ -6,44 +6,48 @@
         </div>
         <div class="card-action">
           <div class='row white-text'>       
-            <div class='col m6 s6 l6'>
+            <div class='col s10 offset-s1 m6 l6'>
                 <% if @recipe.temperature %> <p>Temperature: <%= @recipe.temperature%>C</p> <%else%><%end%>
                 <% if @recipe.water %> <p>Volume:  <%= @recipe.water%>ml </p> <%else%><%end%>
                 <% if @recipe.dose %> <p>Coffee dose: <%= @recipe.dose%>g </p><%else%><%end%>
                 <% if @recipe.time %> <p>Pouring: <%= @recipe.time.strftime('%H:%M')%> </p><%else%><%end%>
             </div>
-            <div class='col m6 s6 l6'>            
+            <div class='col s10 offset-s1 m6 l6'>            
                 <% if @recipe.method %> <p>Method: <%= @recipe.method%> </p><%else%><%end%>
                 <% if @recipe.grinder %> <p>Grinder: <%= @recipe.grinder%></p><%else%><%end%>
                 <% if @recipe.clicks %> <p>Clicks: <%= @recipe.clicks%></p><%else%><%end%>
                 <p>Likes: <%= @recipe.favorites.count %></p>
             </div>
-            <div class='col l12 m12 s12'>        
+            <div class='col l12 m12 s10 offset-s1'>        
               <% if @recipe.description.length > 0 %> <p>Description: <%= simple_format(@recipe.description)%></p><%else%><%end%>
             </div>
           </div>
-          <p><small class='white-text'>Created by: <%= @recipe.user.email%></small> </p>
-          <% if current_user == @recipe.user %>
-            <%= link_to "Edit", edit_recipe_path(@recipe), class: 'btn btn-success btn-sm' %>  
-            <%= link_to "Delete", recipe_path(@recipe), 
-              method: :delete, 
-              data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm'  %> 
-          <% end %>
-          <% if logged_in? %>
-            <% if current_user.favorites.exists?(recipe_id: @recipe.id) %>
-              <%= link_to "Delete from favorites", 
-                  remove_favorite_path(:recipe_id => @recipe.id), 
-                  method: :delete,
-                  data: {confirm: 'Are you sure?'}, 
+          <div class='row'>
+            <div class='col s10 offset-s1'>
+              <p><small class='white-text s8'>Created by: <%= @recipe.user.email%></small> </p>
+              <% if current_user == @recipe.user %>
+                <%= link_to "Edit", edit_recipe_path(@recipe), class: 'btn btn-success btn-sm' %>  
+                <%= link_to "Delete", recipe_path(@recipe), 
+                  method: :delete, data: {confirm: 'Are you sure?'}, 
                   class: 'btn btn-danger btn-sm'  %> 
-            <% else %>
-              <%= link_to "Add to favorites", 
-                  add_favorite_path(:recipe_id => @recipe.id), 
-                  method: :post,
-                  class: 'btn btn-danger btn-sm'  %> 
-            <% end %>
-          <% end %>
-          <%= link_to "View all recipes", recipes_path, class: 'btn btn-info btn-sm' %>
+              <% end %>
+              <% if logged_in? %>
+                <% if current_user.favorites.exists?(recipe_id: @recipe.id) %>
+                  <%= link_to "Delete from favorites", 
+                      remove_favorite_path(:recipe_id => @recipe.id), 
+                      method: :delete,
+                      data: {confirm: 'Are you sure?'}, 
+                      class: 'btn btn-danger btn-sm'  %> 
+                <% else %>
+                  <%= link_to "Add to favorites", 
+                      add_favorite_path(:recipe_id => @recipe.id), 
+                      method: :post,
+                      class: 'btn btn-danger btn-sm'  %> 
+                <% end %>
+              <% end %>
+              <%= link_to "View all recipes", recipes_path, class: 'btn btn-info btn-sm' %>
+            </div>
+          </div>
         </div>
         <div id='comments' class='white-text'>
           <h5><%= @recipe.comments.count %> comments </h5>
