@@ -1,6 +1,6 @@
 class Bean < ApplicationRecord
     belongs_to :roaster, foreign_key: "roaster_id"
-    has_many :recipes
+    has_many :recipes, dependent: :destroy
     validates :name, presence: true, length: { minimum: 3, maximum: 50}
     validates :roaster_id, presence: true
     validates :method, presence: true, length: { minimum: 3, maximum: 20}

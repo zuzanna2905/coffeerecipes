@@ -9,6 +9,6 @@ class User < ApplicationRecord
     has_secure_password
     validates :password_confirmation, presence: true
     has_many :recipes, dependent: :destroy
-    has_many :favorites
-    has_many :comments
+    has_many :favorites, dependent: :destroy
+    has_many :comments, dependent: :destroy
 end
