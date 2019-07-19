@@ -65,6 +65,7 @@ group :test do
   gem 'webdrivers', '~> 3.0'
   gem 'rails-controller-testing'
   gem 'shoulda-matchers'
+  gem 'factory_bot', '~> 5.0', '>= 5.0.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

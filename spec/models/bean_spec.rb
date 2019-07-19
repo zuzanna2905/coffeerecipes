@@ -14,7 +14,7 @@ RSpec.describe Bean, type: :model do
   end
 
   describe "Associations" do
-  it { should have_many(:recipes) }
-  it { should belong_to(:roaster) }
+    it { should have_many(:recipes) }
+    it { should belong_to(:roaster) }
   end
 end
