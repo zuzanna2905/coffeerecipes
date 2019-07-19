@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe FavoritesController, type: :controller do
     context 'without sign in' do
+        let(:favorite) { build :favorite }
+
         it 'show INDEX page' do
             get :index
             expect(response).to redirect_to('/login')
@@ -12,16 +14,17 @@ RSpec.describe FavoritesController, type: :controller do
         end
 
         it 'DESTROY favorite' do
-            get :destroy, params: {recipe_id: 1}
+            post :destroy, params: { recipe_id: favorite.recipe }
             expect(response).to redirect_to('/login')
         end
     end
 
     context 'with sign in' do
+        let(:user) { build :user }
+        let(:favorite) { create(:favorite, user: user) }
+
         before(:each) do
-            #login
-            @user = create_user 
-            login(@user)
+            login(favorite.user)
         end
 
         it 'show INDEX page' do
@@ -34,19 +37,12 @@ RSpec.describe FavoritesController, type: :controller do
         end
 
         it 'DESTROY favorite' do
-            create_roaster
-            create_bean
-            create_recipe
-            @favorite = create_favorite
-            @favorite.destroy
+            post :destroy, params: { recipe_id: favorite.recipe }
             expect(response.status).to eq(200)
         end
 
         it 'CREATE favorite' do 
-            create_roaster
-            create_bean
-            create_recipe
-            @favorite = create_favorite
+            favorite
             expect(response.status).to eq(200)
         end
     

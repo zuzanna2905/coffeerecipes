@@ -22,10 +22,12 @@ class FavoritesController < ApplicationController
 
   def destroy
     favorite = Recipe.find(params[:recipe_id])
-    favorite.likes -= 1
-    favorite.save
-    Favorite.where(recipe: params[:recipe_id],user: current_user).first.destroy
-    flash[:danger] = 'Recipe was successfully destroyed!'
+    if favorite
+      favorite.likes -= 1
+      favorite.save
+      Favorite.where(recipe: params[:recipe_id],user: current_user).first.destroy
+      flash[:danger] = 'Recipe was successfully destroyed!'
+    end
     redirect_to recipes_path
   end
 end
