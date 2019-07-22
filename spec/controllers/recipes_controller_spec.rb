@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.describe RecipesController, type: :controller do
     context 'without sign in' do
+        let(:id) { 1 }
+        let(:recipe) { create :recipe }
+
         it 'show INDEX page' do
             get :index
             expect(response).to render_template('recipes/index')
@@ -13,16 +16,12 @@ RSpec.describe RecipesController, type: :controller do
         end
 
         it 'show EDIT page' do
-            get :edit, params: { id: 1 }
+            get :edit, params: { id: id }
             expect(response).to redirect_to('/login')
         end
 
         it 'SHOW recipe page' do
-            create_user
-            create_roaster
-            create_bean
-            @recipe = create_recipe
-            get :show, params: { id: @recipe }
+            get :show, params: { id: recipe }
             expect(response).to render_template('recipes/show')
         end
 
@@ -33,12 +32,13 @@ RSpec.describe RecipesController, type: :controller do
     end
 
     context 'with sign in' do
-        before do |test|
-            unless test.metadata[:skip_before]
-                #login
-                @user = create_user 
-                login(@user)
-            end
+        let(:user) { create :random_user }
+        let(:second_user) { create :random_user  }
+        let(:recipe) { create :recipe, user: user }
+        let(:second_recipe) { create(:recipe, user: second_user) }
+
+        before(:each) do
+            login(user)
         end
 
         it 'show INDEX page' do
@@ -52,29 +52,17 @@ RSpec.describe RecipesController, type: :controller do
         end
 
         it 'show EDIT page of user recipe' do
-            create_roaster
-            create_bean
-            @recipe = create_recipe
-            get :edit, params: { id: @recipe }
+            get :edit, params: { id: recipe }
             expect(response).to render_template('recipes/edit')
         end
 
-        it 'show EDIT page of another user recipe', :skip_before do
-            create_user
-            @user = create_user2
-            login(@user)
-            create_roaster
-            create_bean
-            @recipe = create_recipe
-            get :edit, params: { id: @recipe }
+        it 'show EDIT page of another user recipe' do
+            get :edit, params: { id: second_recipe }
             expect(response).to redirect_to('/recipes')
         end
 
         it 'SHOW recipe page' do
-            create_roaster
-            create_bean
-            @recipe = create_recipe
-            get :show, params: { id: @recipe }
+            get :show, params: { id: recipe }
             expect(response).to render_template('recipes/show')
         end
 

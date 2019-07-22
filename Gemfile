@@ -66,6 +66,7 @@ group :test do
   gem 'rails-controller-testing'
   gem 'shoulda-matchers'
   gem 'factory_bot', '~> 5.0', '>= 5.0.2'
+  gem 'faker', '~> 1.9', '>= 1.9.6'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
