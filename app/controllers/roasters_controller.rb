@@ -1,5 +1,7 @@
 class RoastersController < ApplicationController
     skip_before_action :require_user, only: [:index, :show]
+    before_action :require_admin, only: [:new, :create]
+
     def index
         @roasters = Roaster.paginate(page: params[:page], per_page: 12)
     end
