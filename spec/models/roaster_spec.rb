@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Roaster, type: :model do
-  subject { described_class.new(name: 'Audun Coffee', country: 'Poland')}
+  subject { build :roaster }
 
   describe "Validations" do
     it { should validate_presence_of(:name) }
