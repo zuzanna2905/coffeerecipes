@@ -1,6 +1,7 @@
 class RoastersController < ApplicationController
     skip_before_action :require_user, only: [:index, :show]
-    before_action :require_admin, only: [:new, :create]
+    before_action :set_roaster, only: [:show, :edit, :update]
+    before_action :require_admin, only: [:new, :create, :edit, :update]
 
     def index
         @roasters = Roaster.paginate(page: params[:page], per_page: 12)
@@ -21,10 +22,25 @@ class RoastersController < ApplicationController
     end
 
     def show
-        @roaster = Roaster.find(params[:id])
+    end
+
+    def edit
+    end
+
+    def update    
+      if @roaster.update(roaster_params)
+        flash[:success] = 'Roaster was successfully updated!'
+        redirect_to roaster_path(@roaster)
+      else
+        render 'edit'
+      end
     end
 
     private
+        def set_roaster
+            @roaster = Roaster.find(params[:id])
+        end
+
         def roaster_params
             params.require(:roaster).permit(:name, :country)
         end
