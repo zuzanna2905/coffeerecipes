@@ -4,6 +4,9 @@ FactoryBot.define do
     email {'jon@gmail.com'}
     password {'jon123'}
     password_confirmation {'jon123'}
+    trait :admin do
+      admin {true}
+    end
   end
 
   factory :random_user, class: User do 
@@ -11,5 +14,8 @@ FactoryBot.define do
     email { Faker::Internet.safe_email }
     password {'jon123'}
     password_confirmation {'jon123'}
+    trait :admin do
+      admin {true}
+    end
   end
 end

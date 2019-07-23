@@ -26,9 +26,9 @@ RSpec.describe BeansController, type: :controller do
     end
 
     context 'with sign in' do
+        let(:user) { create :user }
         before(:each) do
-            @user = create_user 
-            login(@user)
+            login(user)
         end
 
         it 'show INDEX page' do
@@ -53,9 +53,9 @@ RSpec.describe BeansController, type: :controller do
     end
 
     context 'with admin sign in' do
+        let(:admin) { create :random_user, :admin }
         before(:each) do
-            @user = create_admin 
-            login(@user)
+            login(admin)
         end
 
         it 'show EDIT page', :admin do
