@@ -26,6 +26,7 @@ RSpec.configure do |config|
   config.include SpecTestHelper, :type => :controller
   config.include SpecTestHelper, :type => :model
   config.include SpecTestHelper, :type => :view
+  config.include SpecTestHelper, :type => :feature
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
     # and `failure_message` of custom matchers include text for helper methods

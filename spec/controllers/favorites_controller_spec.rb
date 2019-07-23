@@ -35,16 +35,6 @@ RSpec.describe FavoritesController, type: :controller do
         it 'no NEW page' do
             expect {get :new}.to raise_error(ActionController::UrlGenerationError)
         end
-
-        it 'DESTROY favorite' do
-            post :destroy, params: { recipe_id: favorite.recipe }
-            expect(response.status).to eq(200)
-        end
-
-        it 'CREATE favorite' do 
-            favorite
-            expect(response.status).to eq(200)
-        end
     
     end
 end
