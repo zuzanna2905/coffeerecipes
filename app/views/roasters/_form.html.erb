@@ -1,0 +1,28 @@
+<%= render 'shared/errors', obj: @roaster %>
+
+<div class='row'>
+    <div class='col s12'>
+        <%= form_for(@roaster, :html => {class: 'form-horizontal', role: 'form'}) do |f| %>
+        <div class='row'> 
+            <div class='input-field col s12'>
+                <%= f.label :name, class: 'active' %>
+                <%= f.text_field :name, placeholder: 'Name', autofocus: true, required: true%>
+            </div>
+        </div>
+        <div class='row'> 
+            <div class='input-field col s12'>
+                <%= f.label :country, class: 'active'  %>
+                <%= f.text_field :country, placeholder: 'Country', autofocus: true, required: true %>
+            </div>
+        </div>
+        <div class='row'> 
+            <div class='input-field col s12'>
+                <%= f.submit 'Add roaster', class: 'btn btn-success btn-lg'%>
+            </div>
+        </div>
+        <% end %>
+        <div class='row'>
+            [ <%= link_to "Cancle request and return to roasters listing", roasters_path%> ]
+        </div>
+    </div>
+</div>
