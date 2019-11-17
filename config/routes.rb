@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'home#index'
   resources :users, except: [:destroy]
   resources :recipes do 
@@ -13,5 +14,7 @@ Rails.application.routes.draw do
   get 'login', to: 'logins#new'
   post 'login', to: 'logins#create'
   delete 'logout', to: 'logins#destroy'
+  # get ‘auth/:provider/callback’, to: ‘sessions#googleAuth’
+  # get ‘auth/failure’, to: redirect(‘/’)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
